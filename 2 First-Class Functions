@@ -40,3 +40,17 @@ How are JavaScript functions first-class functions? Select all that apply:
   A function can be stored in a variable
 
 A function can be passed in as an argument into another function
+
+
+----------
+const returnsAFunction = function () {
+  return function () {
+    console.log('Hello from inside a function');
+  };
+};
+
+const newFunction = returnsAFunction();
+
+newFunction();
+
+returnsAFunction()();
