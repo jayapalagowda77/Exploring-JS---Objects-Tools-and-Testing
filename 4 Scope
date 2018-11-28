@@ -6,3 +6,49 @@ A function's runtime scope describes the variables available for use inside a gi
     Local variables declared within the function.
     Variables from its parent function's scope.
     Global variables.
+-------------
+
+Question 1 of 4
+
+Consider the following:
+
+const num1 = 5;
+
+function functionOne() {
+  const num2 = 10;
+
+  function functionTwo(num3) {
+    const num4 = 35;
+
+    return num1 + num2 + num3 + num4;
+  }
+
+  return functionTwo(0);
+}
+
+Which variables does functionTwo() have access to? Select all that apply:
+
+    num1
+
+    num2
+
+    num3
+
+    num4
+
+
+Thanks for completing that!
+
+All four variables are available for functionTwo() to use. Let's break this one down:
+
+num1 is a global variable, accessible anywhere in the application code.
+
+num2 is a local variable in functionOne(), the parent function in which functionTwo() is defined.
+
+num3 is an argument passed directly to functionTwo().
+
+num4 is a local variable in functionTwo().
+
+================================
+
+
