@@ -221,3 +221,6 @@ const results = musicData.filter(function(md)
 });
 
 console.log(results);
+
+------------
+Array methods, such as forEach(), map(), and filter(), take advantage of callbacks to execute functions onto a given array's elements
