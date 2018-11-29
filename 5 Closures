@@ -1,0 +1,47 @@
+Functions Retain Their Scope
+
+function remember(number) {
+    return function() {
+        return number;
+    }
+}
+
+const returnedFunction = remember(5);
+
+console.log( returnedFunction() );
+// 5
+
+-------
+
+const myName = 'Andrew';
+
+function introduceMyself() {
+  const you = 'student';
+
+  function introduce() {
+    console.log(`Hello, ${you}, I'm ${myName}!`);
+  }
+
+  return introduce();
+}
+
+introduceMyself();
+// 'Hello, student, I'm Andrew!'
+
+--------------
+
+Question 1 of 3
+
+What is true about closures? Select all that apply:
+
+A function maintains a reference to its parent's scope.
+
+If the reference to a parent function is still accessible, the scope persists.
+
+**
+
+Thanks for completing that!
+
+When it comes to JavaScript, scope and closures go hand-in-hand.
+
+--
