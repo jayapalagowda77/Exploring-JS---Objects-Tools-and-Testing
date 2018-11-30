@@ -14,4 +14,23 @@ Thanks for completing that!
 Immediately-invoked function expressions leverage what you've learned about scope and closures to create private scope!
 
 ---------------------
+Question 2 of 2
+
+The following immediately-invoked function expression is run in the browser:
+
+(function(n){
+  delete n;
+  return n;
+})(2);
+
+What is the return value?
+
+2
+**
+
+Thanks for completing that!
+
+This one may have been tricky! The key to this quiz is the result of using the delete operator. The delete operator is actually only effective on an object's properties; it isn't used to directly deallocate resources (i.e., free up memory), and has no effect on variables or names of functions.
+
+As such, the number passed into this immediately-invoked function expression, 2, is returned.
 
