@@ -1,0 +1,91 @@
+Constructor Functions
+
+Question 1 of 4
+
+Which of the following about constructor functions are true? Constructor functions (select all that apply)...
+
+must be invoked with new
+
+are used to instantiate a new object
+
+Thanks for completing that!
+
+A constructor function doesn't directly return anything (i.e., there's no explicit return statement), but invoking them with the new operator constructs a new object.
+
+****
+
+
+Question 2 of 4
+
+What happens if a constructor function begins with a lower-case letter?
+
+ Nothing. It will still work.
+
+Thanks for completing that!
+
+Capitalizing the first letter of a constructor function's name is just a naming convention. Though the first letter should be capitalized, inadvertently leaving it lower-cased still makes the constructor function (i.e., when invoked with the new operator, etc.).
+
+
+*************
+
+/*
+
+Now it's your turn to create a constructor function. Declare a
+`Sandwich` constructor function that takes three parameters:
+
+1. `bread` (string) - the type of bread for the sandwich (e.g. "Wheat")
+2. `meat` (array) - the meats to put on the sandwich
+   (e.g. `[]` for a vegetarian sandwich!)
+3. `vegetables` (array) - the vegetables to include in the sandwich
+
+*/
+
+function Sandwich(bread,meat,vegetables) {
+    this.bread = bread;
+    this.meat = meat;
+    this.vegetables = vegetables;
+    
+    Sandwich.prototype.make = function(){
+        console.log("This "+ this.meat+" with "+this.vegetables+" on "+this.bread+" lookin so gOOD!");
+    }
+    
+    
+    // this.introduce = function () {
+    //     console.log("This "+ this.meat+" with "+this.vegetables+" on "+this.bread+" lookin so gOOD!");
+    // };
+}
+
+const MySandwich = new Sandwich('Wheat',['Chicken','Pancetta'],['spinach', 'Cucumber']);
+
+MySandwich.make();
+
+***************************8
+
+Question 4 of 4
+
+Consider the following constructors:
+
+function Finch(name) {
+  this.kingdom = 'Animalia';
+  this.name = name;
+}
+
+function Sparrow(name) {
+  this.kingdom = 'Animalia';
+  this.name = name;
+}
+
+Let's create an instance of each constructor:
+
+const atticus = new Finch('Atticus');
+const jack = new Sparrow('Jack');
+
+What is the result when atticus instanceof Sparrow; is executed?
+
+false
+
+Thanks for completing that!
+
+false is returned. Not only is Sparrow not the atticus object's constructor function -- the Sparrow object is nowhere to be found in atticus's prototype chain.
+---
+
