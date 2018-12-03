@@ -1,1 +1,48 @@
 The `this` Keyword
+
+Question 1 of 4
+
+Time for a quick review! We explored the this keyword a bit in Lesson 1, so let's make sure we're on the same page before continuing.
+
+What is true about this? Select all that apply:
+
+Using this, methods can access and manipulate an object's properties
+
+this is a reserved word in JavaScript
+**
+
+Thanks for completing that!
+
+A value for this is set when a method is invoked on an object, and that value refers to that object. Since it is a reserved word, it should not be used as any variable name, function name, etc.
+--------
+
+Question 2 of 4
+
+Consider the following constructor function, City:
+
+function City(name, population) {
+  this.name = name;
+  this.population = population;
+
+  this.identify = function () {
+    console.log(`${this.name}'s population is ${this.population}.`);
+  };
+}
+
+The following is executed:
+
+const sanFrancisco = new City('San Francisco', 870000);
+
+What is the value of this?
+
+The newly-created object, referenced by sanFrancisco
+
+
+Thanks for completing that!
+
+Depending on how a function is invoked, the value of this is set to a different value. We'll take a deeper dive on this very shortly!
+
+
+********
+If a constructor function is called with the new operator, the value of this is set to the newly-created object. If a method is invoked on an object, this is set to that object itself. And if a function is simply invoked, this is set to the global object: window.
+Close
