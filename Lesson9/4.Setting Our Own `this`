@@ -1,3 +1,17 @@
 More Ways to Invoke Functions
 
 We've seen various ways to invoke functions, each with their own implications regarding the value of this. There are yet two more ways to invoke a function: either using the call() or the apply() methods. 
+
+=============
+Question 4 of 5
+
+What is true about bind()? Select all that apply:
+
+    bind() is a method that is called on a function
+
+    bind() returns a new function that, when called, has this set to the provided object
+
+
+Thanks for completing that!
+
+Under the hood, bind() returns a new function that can be called like a normal function (e.g., myFunction()), but inside of it, a method will be invoked method-style (e.g., myObject.myMethod()). This has helps us when we see potential scope issues with this when passing callback functions.
