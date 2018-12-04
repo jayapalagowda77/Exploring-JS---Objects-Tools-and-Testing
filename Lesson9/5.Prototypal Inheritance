@@ -1,1 +1,49 @@
 Prototypal Inheritance
+
+For the next quiz, consider the following two code snippets below (i.e., A and B):
+
+// (A)
+
+function Dalmatian (name) {
+  this.name = name;
+
+  this.bark = function() {
+    console.log(`${this.name} barks!`);
+  };
+}
+
+// (B)
+
+function Dalmatian (name) {
+  this.name = name;
+}
+
+Dalmatian.prototype.bark = function() {
+  console.log(`${this.name} barks!`);
+};
+
+Question 1 of 5
+
+Let's say that we want to define a method that can be invoked on instances (objects) of the Dalmatian constructor function (we'll be instantiating at least 101 of them!).
+
+Which of the preceding two approaches is optimal?
+
+(B) is optimal, because the function that bark points to does not need to be recreated each time an instance of Dalmatian is created.
+
+
+Thanks for completing that!
+
+While both approaches work just fine (i.e., any instances created by the constructor function will be able to invoke a bark() method), the second approach is more ideal. By adding methods to the prototype, memory is saved as more Dalmatian objects are instantiated. Along with being more efficient, we also don't have to update all objects individually should be decide to change a method.
+
++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
