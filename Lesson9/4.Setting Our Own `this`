@@ -15,3 +15,49 @@ What is true about bind()? Select all that apply:
 Thanks for completing that!
 
 Under the hood, bind() returns a new function that can be called like a normal function (e.g., myFunction()), but inside of it, a method will be invoked method-style (e.g., myObject.myMethod()). This has helps us when we see potential scope issues with this when passing callback functions.
+
+
+
++++++
+
+Consider the following:
+
+const driver = {
+  name: 'Danica',
+  displayName: function () {
+    console.log(`Name: ${this.name}`);
+  }
+};
+
+const car = {
+  name: 'Fusion'
+};
+
+Write an expression using bind() that allows us to "borrow" the displayName() method from driver for the car object to use. Note: The expression itself is sufficient (no need to save it to a variable).
+
+*** driver.displayName.bind(car);
+
+
+Thanks for completing that!
+
+Here's how we did it:
+
+driver.displayName.bind(car);
+
+++++++
+Summary
+
+JavaScript provides three methods that allow us to set the value of this for a given function:
+
+    call() invokes the function and has arguments passed in individually, separated by commas.
+    apply() is similar to call(); it invokes the function just the same, but arguments are passed in as an array.
+    bind() returns a new function with this bound to a specific object, allowing us to call it as a regular function.
+
+
+
+
+
+
+
+
+
