@@ -1,1 +1,23 @@
 Arrow Functions
+Functions are one of the primary data structures in JavaScript; they've been around forever.
+++++++++++++
+Quiz Question
+
+Take a look at the following code:
+
+const names = ['Afghanistan', 'Aruba', 'Bahamas', 'Chile', 'Fiji', 'Gabon', 'Luxembourg', 'Nepal', 'Singapore', 'Uganda', 'Zimbabwe'];
+
+const longNames = names.filter(function(name) {
+  return name.length > 6;
+});
+
+Which of the following choices does the same thing, but replaces .filter()'s function with an arrow function?
+
+const longNames = names.filter( name => name.length > 6 );
+
+
+Thanks for completing that!
+
+This arrow function returns country names that are six characters or longer.
+
+===========================
