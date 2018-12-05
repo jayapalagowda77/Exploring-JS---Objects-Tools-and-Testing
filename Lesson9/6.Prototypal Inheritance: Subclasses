@@ -1,0 +1,95 @@
+Prototypal Inheritance: Subclasses
+
+The Cat() constructor function is invoked using the new operator, which creates the bailey instance (object). Note that the meow() method is defined in the prototype of the bailey object's constructor function. The prototype is just an object, and all objects created by that constructor are secretly linked to the prototype. As such, we can execute bailey.meow() as if it were bailey's own method!
+
+
+When calling any property on any object, the JavaScript engine will first look for the property in the object itself (i.e., the object's own, non-inherited properties). If the property is not found, JavaScript will then look at the object's prototype. If the property still isn't found in the object's prototype, JavaScript will continue the search up the prototype chain.
+
+Again, inheritance in JavaScript is all about setting up this chain!
++++++++++
+
+Question 1 of 4
+
+Consider the following:
+
+function GuineaPig (name) {
+  this.name = name;
+  this.isCute = true;
+}
+
+const waffle = new GuineaPig('Waffle');
+
+What does waffle.__proto__ refer to?
+
+GuineaPig.prototype
+
+
+
+Thanks for completing that!
+
+When the new instance of GuineaPig is created, the special property waffle.__proto__ is set to GuineaPig.prototype. This secret link allows instances of the GuineaPig constructor to access properties of GuineaPig.prototype. Keep in mind that you should never use the __proto__ in any code you write.
++++++++++++
+
+
+
+
+Question 3 of 4
+
+Consider the following:
+
+function Parent() {
+  // ...
+}
+
+function Child() {
+  // ...
+}
+
+Child.prototype = Object.create(Parent.prototype);
+
+const child = new Child();
+
+The following is then executed:
+
+child instanceof Parent;
+
+What is printed to the console?
+
+--------true
+
+
+
+
+
+Thanks for completing that!
+
+Object.create() takes in a single object as an argument, and returns a new object. That new object's __proto__ property is set to whatever was originally passed into Object.create().
+
+In this quiz, Parent.prototype was the argument passed into Object.create(). The return value of the expressionObject.create(Parent.prototype);was then set to the value of theChildconstructor'sprototypeproperty. After that, we instantiate a new object:child`.
+
+The expression child instanceof Parent; returns a boolean indicating whether the Parent constructor exists in the child object's prototype chain. Since we know this is true after executing the first expression (i.e., Child.prototype = Object.create(Parent.prototype);), the console outputs true.
++++++++++++++++++++++=
+Question 4 of 4
+
+What is true about Object.create()? Select all that apply:
+
+    It returns a new object whose __proto__ property is set to the object passed into Object.create()
+
+    Using Object.create(), we can have objects inherit from just about any object we want (i.e., not only the prototype)
+
+    Object.create() allows us to implement prototypal inheritance without mutating the prototype
+
+
+Thanks for completing that!
+
+Object.create() is a practical approach to establish prototypal inheritance in JavaScript.
+-------------
+
+Summary
+
+Inheritance in JavaScript is all about setting up the prototype chain. This allows us to subclass, that is, create a "child" object that inherits most or all of a "parent" object's properties and methods. We can then implement any of the child object's unique properties and methods separately, while still retaining data and functionality from its parent.
+
+An object (instance) is secretly linked to its constructor function's prototype object through that instance's __proto__ property. You should never use the __proto__ in any code you write. Using __proto__ in any code, or even inheriting just the prototype directly, leads to some unwanted side effects.
+
+To efficiently manage inheritance in JavaScript, an effective approach is to avoid mutating the prototype completely. Object.create() allows us to do just that, taking in a parent object and returning a new object with its __proto__ property set to that parent object.
+

@@ -1,0 +1,102 @@
+The `this` Keyword
+
+Question 1 of 4
+
+Time for a quick review! We explored the this keyword a bit in Lesson 1, so let's make sure we're on the same page before continuing.
+
+What is true about this? Select all that apply:
+
+Using this, methods can access and manipulate an object's properties
+
+this is a reserved word in JavaScript
+**
+
+Thanks for completing that!
+
+A value for this is set when a method is invoked on an object, and that value refers to that object. Since it is a reserved word, it should not be used as any variable name, function name, etc.
+--------
+
+Question 2 of 4
+
+Consider the following constructor function, City:
+
+function City(name, population) {
+  this.name = name;
+  this.population = population;
+
+  this.identify = function () {
+    console.log(`${this.name}'s population is ${this.population}.`);
+  };
+}
+
+The following is executed:
+
+const sanFrancisco = new City('San Francisco', 870000);
+
+What is the value of this?
+
+The newly-created object, referenced by sanFrancisco
+
+
+Thanks for completing that!
+
+Depending on how a function is invoked, the value of this is set to a different value. We'll take a deeper dive on this very shortly!
+
+
+********
+If a constructor function is called with the new operator, the value of this is set to the newly-created object. If a method is invoked on an object, this is set to that object itself. And if a function is simply invoked, this is set to the global object: window.
+Close
+
+
+Question 3 of 4
+
+Consider the following object, building:
+
+const building = {
+  floors: 5,
+  addFloor: function () {
+    this.floors += 1;
+  }
+};
+
+building.addFloor();
+// ???
+
+What is the value of this when building.addFloor(); is executed?
+
+---- building
+
+
+Recall that a method can directly access the object on which it was called. In this case, it modifies building's floors property by incrementing its value by 1.
+
+
+***
+
+Question 4 of 4
+
+Consider the following:
+
+function myFunction() {
+  console.log("What is the value of 'this'?");
+}
+
+myFunction();
+// ???
+
+When myFunction(); is executed, what is the value of the this keyword?
+
+    window
+
+
+Thanks for completing that!
+
+When a function is invoked (i.e., as a function, rather than as a method or with the new operator), this gets set to the global object: window. This should be review from Lesson 1, but it's still important to note here as well!
+
+
+
+Summary
+
+Functions, objects, and this are all interconnected. When invoking constructor functions with the new operator, a this variable is set to the newly-created object. When invoking a method on an object, this is set to that object itself. And when invoking a function in a browser environment, this is set to window, otherwise known as the global object.
+
+Along with all this, there is yet one more set of ways to invoke functions: with apply(), and with call(). Both methods share quite a few similarities, and they each allow us to specify how we want to set this. We'll take a look at each of them in detail next!
+
