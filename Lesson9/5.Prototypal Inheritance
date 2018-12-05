@@ -37,12 +37,51 @@ While both approaches work just fine (i.e., any instances created by the constru
 
 +++++++++++++++
 
+Question 2 of 5
+
+What is true about hasOwnProperty()? Select all that apply:
+
+It returns a boolean indicating whether the object has the specified property as its own property (i.e., the property isn't inherited)
+
+hasOwnProperty() is invoked as a method onto an object
+****
+Thanks for completing that!
+
+hasOwnProperty() takes in a single argument (i.e. the property to be checked), and the method is invoked directly on an object.
+
+
++++++
+
+Question 3 of 5
+
+What is true about isPrototypeOf() or getPrototypeOf()? Select all that apply:
+
+    isPrototypeOf() checks whether or not an object exists in another object's prototype chain
+
+    isPrototypeOf() takes a single argument: an object whose prototype chain is to be searched
+
+    getPrototypeOf() returns the prototype of the object passed into it
 
 
 
+Thanks for completing that!
+
+For a closer look at isPrototypeOf() and getPrototypeOf, feel free to check out their MDN pages (linked).
+****
+Question 4 of 5
+
+What is true about constructor property? Select all that apply:
+
+    Accessing an object's constructor property returns a reference to the constructor function that created that object (instance)
+
+Every object has a constructor property
+
+Objects created with literal notation are constructed with the Object() constructor function
 
 
+Thanks for completing that!
 
+All objects have a constructor property. For a closer look, feel free to check out its article on MDN (linked).
 
 
 
