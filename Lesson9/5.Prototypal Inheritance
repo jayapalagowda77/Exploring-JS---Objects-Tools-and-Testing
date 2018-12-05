@@ -82,6 +82,38 @@ Objects created with literal notation are constructed with the Object() construc
 Thanks for completing that!
 
 All objects have a constructor property. For a closer look, feel free to check out its article on MDN (linked).
+*************
+Question 5 of 5
+
+Let's say that we create the following object, capitals, using regular object literal notation:
+
+const capitals = {
+  California: 'Sacramento',
+  Washington: 'Olympia',
+  Oregon: 'Salem',
+  Texas: 'Austin'
+};
+
+What is returned when Object.getPrototypeOf(capitals); is executed?
+
+    A reference to Object()'s prototype
+
+
+Thanks for completing that!
+
+This one may have been tricky! Keep in mind that since capitals was created with object literal notation, its constructor is the built-in Object() constructor function itself! As such, it maintains a reference to its constructor's prototype. That is,
+
+Object.getPrototypeOf(capitals) === Object.prototype
+
+// true
++++++++++++++++++++++==
+We also looked at a few methods and properties that allow use to check the origins and references of objects and their prototypes, namely:
+
+    hasOwnProperty()
+    isPrototypeOf()
+    Object.getPrototypeOf()
+    .constructor
+
 
 
 
