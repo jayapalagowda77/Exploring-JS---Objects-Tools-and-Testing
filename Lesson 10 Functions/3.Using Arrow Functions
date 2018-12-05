@@ -1,0 +1,80 @@
+Using Arrow Functions
+
+Question 1 of 2
+
+Which of the following choices have correctly formatted arrow functions?
+
+    setTimeout(() => {
+        console.log('starting the test');
+        test.start();
+    }, 2000);
+
+    setTimeout( _ => {
+        console.log('starting the test');
+        test.start();
+    }, 2000);
+
+    const vowels = 'aeiou'.split('');
+    const bigVowels = vowels.map( (letter) => letter.toUpperCase() );
+
+    const vowels = 'aeiou'.split('');
+    const bigVowels = vowels.map( letter => letter.toUpperCase() );
+====================================
+
+Concise and block body syntax
+
+All of the arrow functions we've been looking at have only had a single expression as the function body:
+
+const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(
+  name => name.toUpperCase()
+);
+
+This format of the function body is called the "concise body syntax". The concise syntax:
+
+    has no curly braces surrounding the function body
+    and automatically returns the expression.
+
+If you need more than just a single line of code in your arrow function's body, then you can use the "block body syntax".
+
+const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map( name => {
+  name = name.toUpperCase();
+  return `${name} has ${name.length} characters in their name`;
+});
+
+Important things to keep in mind with the block syntax:
+
+    it uses curly braces to wrap the function body
+    and a return statement needs to be used to actually return something from the function.
+
+===========================
+
+Question 2 of 2
+
+Using your knowledge of how arrow functions work with automatic returns and curly braces, which of the following choices have correctly formatted arrow functions?
+
+    const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'black'];
+
+    const crazyColors = colors.map( color => {
+        const jumble = color.split('').reverse();
+        return jumble.join('') + '!';
+    });
+
+const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'black'];
+const crazyColors = colors.map( color => color.split('').reverse().join('') + '!' );
+
+==========================================
+
+/*
+ * Programming Quiz: Convert Function into an Arrow Function (2-1)
+ */
+
+// convert to an arrow function
+const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
+//     function(square) {
+// 	return square * square;
+// }
+    square => square*square
+);
+
+console.log(...squares);
+
